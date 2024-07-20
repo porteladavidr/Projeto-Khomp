@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Extrator de Registros de Chamadas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Extrator de Registros de Chamadas</h1>
+  <input type="file" id="logFileInput">
+  <input type="text" id="phoneNumberInput" placeholder="Digite o número de telefone">
+  <button onclick="extrairRegistrosDeChamada()">Extrair Registros de Chamada</button>
+  <button onclick="contarFalhas()">Contar Falhas</button>
+  <select id="callSelection" style="display: none;"></select>
+  <pre id="result"></pre>
+
+  <script src="extrator.js"></script>
+  <script src="contadorFalhas.js"></script>
+</body>
+</html>
