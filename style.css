@@ -1,80 +1,149 @@
-/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 body {
-    font-family: 'Roboto', sans-serif; /* Replace with your preferred font */
-    background-color: #f8f9fa; /* Subtle background color */
+    font-family: 'Roboto', sans-serif;
+    background-color: #f8f9fa;
     color: #333;
-  }
-  
-  #logo {
-    width: 150px;
-    height: auto;
-    margin-bottom: 20px;
-  }
-  
-  .container {
-    max-width: 800px; /* Adjust container width as needed */
-    margin: 0 auto; /* Center the container */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
     padding: 20px;
     border-radius: 8px;
-    background-color: #fff; /* White background for contrast */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  }
-  
-  h1 {
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
+}
+
+h1 {
     margin-bottom: 20px;
-  }
-  
-  input[type="file"],
-  input[type="text"],
-  button,
-  select {
-    padding: 8px;
+    font-size: 2rem;
+    color: #4CAF50;
+}
+
+input[type="file"],
+input[type="text"],
+button,
+select {
+    padding: 12px;
     margin: 10px 0;
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
-    width: 100%; /* Make elements span full width */
-  }
-  
-  button {
-    background-color: #4CAF50; /* Green button color */
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+input[type="file"]:hover,
+input[type="text"]:hover,
+button:hover,
+select:hover {
+    border-color: #4CAF50;
+}
+
+button {
+    background-color: #4CAF50;
     color: white;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #45a049; /* Darker green on hover */
-  }
-  
-  select {
-    appearance: none; /* Remove default select arrow */
-    padding-right: 30px; /* Space for arrow */
-    background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%20%24%20height%3D%24%20viewBox%3D%24%200%2024%2024%20fill%3D%22%23ccc%22%3E%3Cpath%20d%3D%22M12%2012l10-10l-10-10l-4.5%204.5l-7.5-7.5l-4.5%204.5%22%3E%3C/path%3E%3C/svg%3E'); /* Down arrow */
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+select {
+    appearance: none;
+    padding-right: 30px;
+    background-image: url('data:image/svg+xml;charset=utf-8,%3Csvg%20width%3D%2224%22%20height%3D%2224%22%20viewBox%3D%220%200%2024%2024%22%20fill%3D%22%23ccc%22%3E%3Cpath%20d%3D%22M12%2015.5l-4.5-4.5h9z%22/%3E%3C/svg%3E');
     background-repeat: no-repeat;
-    cursor: pointer;
-  }
-  
-  select:hover {
-    background-color: #eee;
-  }
-  
-  pre#result {
+    background-position: right 10px center;
+    background-size: 12px;
+}
+
+pre#result {
     white-space: pre-wrap;
     border: 1px solid #ccc;
     padding: 10px;
     font-size: 14px;
-    background-color: #f5f5f5; /* Light gray background */
-  }
-  
-  .call-log { /* Class for extracted call log */
+    background-color: #f5f5f5;
+    margin-top: 20px;
+    border-radius: 4px;
+    text-align: left;
+}
+
+.call-log {
     margin-top: 20px;
     padding: 15px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #fff;
-    font-family: monospace; /* Monospace font for readability */
-  }
-  
+    font-family: monospace;
+}
+
+/* Estilo para linhas com falha */
+.call-fail {
+  color: red;
+  font-weight: bold;
+}
+
+/* Estilos existentes */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.sidebar {
+  width: 200px;
+  background-color: #4CAF50;
+  padding: 15px;
+  position: fixed;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar button {
+  background-color: #fff;
+  color: #4CAF50;
+  border: none;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+}
+
+.sidebar button:hover {
+  background-color: #f1f1f1;
+}
+
+.content {
+  margin-left: 220px; /* Espaço para o menu lateral */
+  padding: 20px;
+  flex: 1;
+}
+
+.section {
+  display: none;
+}
+
+/* Seção ativa visível */
+.section.active {
+  display: block;
+}
